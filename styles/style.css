@@ -506,6 +506,81 @@ nav {
     .project-media img { border-radius: 10px; }
 }
 
+/* Responsive adjustments: header, hero, nav menu (mobile) */
+@media (max-width: 900px) {
+    header {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 12px;
+        padding: 8px 12px;
+        width: calc(100% - 32px);
+    }
+    nav {
+        justify-content: space-between;
+        padding: 8px 12px;
+        position: relative;
+    }
+    .logo { display: block; font-weight: 700; }
+    /* Mobile nav removed - keep header and hero responsive */
+    /* Header adjustments for small screens */
+    header {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 12px;
+        padding: 8px 12px;
+        width: calc(100% - 32px);
+    }
+    nav {
+        justify-content: space-between;
+        padding: 8px 12px;
+        position: relative;
+    }
+    .logo { display: block; font-weight: 700; }
+    .nav-links { display: none; }
+    /* When nav has .open, show menu as a dropdown */
+    nav.open .nav-links {
+        display: flex;
+        position: absolute;
+        right: 12px;
+        top: 56px;
+        flex-direction: column;
+        gap: 12px;
+        background: linear-gradient(180deg, rgba(10,12,18,0.98), rgba(6,8,12,0.98));
+        padding: 12px;
+        border-radius: 10px;
+        border: 1px solid rgba(255,255,255,0.04);
+        box-shadow: 0 12px 36px rgba(0,0,0,0.6);
+        min-width: 160px;
+        z-index: 150;
+    }
+    .nav-links li a { font-size: 1rem; }
+
+    /* Hero layout for small screens */
+    .hero {
+        flex-direction: column-reverse;
+        padding: 56px 18px;
+        gap: 18px;
+        align-items: center;
+    }
+    .hero-content { transform: none; max-width: 100%; text-align: center; }
+    .hero-content h1 { font-size: 2.2rem; }
+    .hero-image img { max-width: 320px; margin-left: 0; margin-top: 12px; }
+
+    /* Projects grid spacing */
+    .projects-grid { padding: 0 12px; }
+
+    /* Footer stacking */
+    .footer-inner { flex-direction: column; gap: 8px; }
+    .footer-note { margin-left: 0; text-align: center; }
+}
+
+/* Minor tweaks for very small devices */
+@media (max-width: 420px) {
+    .hero-content h1 { font-size: 1.8rem; }
+    .hero-image img { max-width: 260px; }
+    .project-media img { height: 160px; }
+}
+
 
 /* Interactive project card (click to expand) */
 .project-card {

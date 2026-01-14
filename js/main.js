@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+  // Mobile nav removed — no toggle behavior needed
   const modal = document.getElementById('project-modal');
   if (!modal) return;
   const backdrop = modal.querySelector('.modal-backdrop');

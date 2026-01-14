@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Actualiza la URL del sitemap al dominio real antes de desplegar
+Sitemap: https://snoriks.dev/sitemap.xml
