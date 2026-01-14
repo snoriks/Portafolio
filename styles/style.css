@@ -269,6 +269,9 @@ nav {
     box-shadow: 0 8px 30px rgba(0,0,0,0.55);
     border: 1px solid rgba(255,255,255,0.03);
     min-height: 200px; /* reduced height to make cards smaller */
+    transition: transform 260ms cubic-bezier(.2,.9,.2,1), box-shadow 260ms ease, filter 220ms ease;
+    will-change: transform;
+    
 }
 
 .project-media {
@@ -282,6 +285,88 @@ nav {
     border-radius: 10px;
     display: block;
     box-shadow: 0 10px 30px rgba(0,0,0,0.55);
+}
+
+
+/* Hover effects for project cards and images */
+.project-row:hover,
+.project-row:focus-within {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.65), 0 6px 18px rgba(255,69,0,0.04);
+    filter: saturate(1.03) brightness(1.02);
+}
+
+.project-media img {
+    transition: transform 280ms cubic-bezier(.2,.9,.2,1), box-shadow 260ms ease, filter 220ms ease;
+}
+.project-media img:hover {
+    transform: scale(1.04) translateY(-6px);
+    box-shadow: 0 18px 48px rgba(2,6,23,0.6);
+    filter: brightness(1.03);
+}
+
+.hero-image img {
+    transition: transform 360ms cubic-bezier(.2,.9,.2,1), box-shadow 260ms ease, filter 220ms ease;
+}
+.hero-image img:hover {
+    transform: scale(1.03) rotate(-1deg) translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .project-row,
+    .project-row:hover,
+    .project-row:focus-within,
+    .project-media img,
+    .hero-image img {
+        transition: none !important;
+        transform: none !important;
+        animation: none !important;
+    }
+}
+
+.hero-image {
+    /* Ensure the wrapper doesn't transform; animations should target the image */
+    transform: none;
+}
+.hero-image img {
+    transition: transform 360ms cubic-bezier(.2,.9,.2,1), box-shadow 260ms ease, filter 220ms ease;
+    will-change: transform;
+}
+/* Apply hover when pointer is over the image or its container, but only transform the image */
+.hero-image img:hover,
+.hero-image:hover img {
+    transform: scale(1.03) rotate(-1deg) translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .project-row,
+    .project-row:hover,
+    .project-row:focus-within,
+    .project-media img,
+    .hero-image img {
+        transition: none !important;
+        transform: none !important;
+        animation: none !important;
+    }
+}
+
+/* Ensure the hero container or any wrapper doesn't animate on hover; only the image should */
+.hero:hover,
+.hero:focus-within,
+.hero-image:hover,
+.hero-image:focus-within {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Make sure only the image receives the interactive visual feedback */
+.hero-image {
+    background: transparent !important;
+    box-shadow: none !important;
 }
 
 .project-body {
