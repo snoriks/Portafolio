@@ -134,7 +134,80 @@ nav {
     width: 50px;
     height: 3px;
     background-color: #ff4500;
-    margin: 15px 0;
+    margin: 15px 0 24px 0;
+}
+
+/* Contact Section Styles */
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.contact-label {
+    font-size: 0.85rem;
+    color: #a0aec0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0;
+    font-weight: 500;
+}
+
+.contact-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.contact-box:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.contact-value {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #fff;
+    flex: 1;
+    word-break: break-all;
+}
+
+.btn-copy {
+    padding: 6px 14px;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-copy:hover {
+    background-color: rgba(255, 69, 0, 0.2);
+    border-color: #ff4500;
+    color: #ff4500;
+}
+
+.btn-copy:active {
+    background-color: rgba(255, 69, 0, 0.3);
 }
 
 @keyframes hero-appear {

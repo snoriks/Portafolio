@@ -52,4 +52,21 @@ document.addEventListener('DOMContentLoaded', function () {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
   });
+
+  // Copy to clipboard functionality
+  document.querySelectorAll('.btn-copy').forEach(btn => {
+    btn.addEventListener('click', function () {
+      const value = this.getAttribute('data-value');
+      navigator.clipboard.writeText(value).then(() => {
+        const originalText = this.textContent;
+        this.textContent = '✓ COPIADO';
+        
+        setTimeout(() => {
+          this.textContent = originalText;
+        }, 2000);
+      }).catch(err => {
+        console.error('Error al copiar:', err);
+      });
+    });
+  });
 });
